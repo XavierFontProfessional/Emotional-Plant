@@ -1,1 +1,7 @@
+.idea/
 .env
+cloudflare.key
+cloudflare.crt
+*.iml
+node_modules/
+package-lock.json
