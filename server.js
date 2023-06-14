@@ -41,6 +41,8 @@ app.post('/analyze_sentiment', async (req, res) => {
     const expression = req.body.expression;
     let sentimentScore, flowerResponse;
 
+    console.log("client sent" + req.body.expression)
+    console.log("OPENAI apiKey:"+ process.env.OPENAI_API_KEY);
     try {
         // Get sentiment score
         let gptResponse = await openai.createCompletion({
