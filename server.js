@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'tree.html'));
 });
 
-app.get('/', (req, res) => {
+app.get('/test', (req, res) => {
     res.send("request has been reached");
 });
 
