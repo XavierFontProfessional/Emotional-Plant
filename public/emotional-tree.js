@@ -212,7 +212,7 @@ async function getFlowerFeelings() {
     sentToTreeButton.style.display = "none";
     console.log(message);
     try {
-        const response = await fetch("http://localhost:3000/analyze_sentiment", {
+        const response = await fetch("https://emotionaltree.xavierfont.com/analyze_sentiment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
