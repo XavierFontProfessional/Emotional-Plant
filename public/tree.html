@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8"/>
+
+</head>
+
+<body>
+<div id="view">
+    <div id="et-container" style="width: 100%; height: 100%">
+        <button id="et-start-emotional-tree-button" onclick="startEmotionalTree()">Play</button>
+        <div id="et-message-to-tree" style="visibility: hidden">
+            <input id="et-message">
+            <button id="et-send-to-tree-button" onclick="getFlowerFeelings()">Send</button>
+        </div>
+        <div id="et-canvas" style="  position: relative; width: 100% !important; height: 80% !important;">
+            <img id="et-bean" style="display: none; position: absolute; bottom: 0; height: 20%; width: 100%;" src="https://emotionaltree.xavierfont.com/asset-images/dirt.png"></img>
+        </div>
+        <p id="et-tree-thoughts"></p>
+        <button onclick="save(`tree_${Math.floor(Math.random() * (1000000000 - 1 + 1) + 1)}.png`);">Post</button>
+        <button onclick="save(`tree_${Math.floor(Math.random() * (1000000000 - 1 + 1) + 1)}.png`);">Save</button>
+    </div>
+</div>
+
+
+<script src="emotional-tree.js"></script>
+
+</body>
+
+</html>

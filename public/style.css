@@ -1,0 +1,9 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#view {
+    background-color: aliceblue;
+    width: 200px;
+    height: 500px;
+}
