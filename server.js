@@ -73,4 +73,19 @@ app.post('/analyze_sentiment', async (req, res) => {
 });
 
 
-app.listen(80, () => console.log('Server listening on port 80'));
+// HTTPS server
+const httpsOptions = {
+    key: fs.readFileSync('cloudflare.key'),
+    cert: fs.readFileSync('cloudflare.crt')
+};
+
+const httpsServer = https.createServer(httpsOptions, app);
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
+});
+
+// HTTP Server
+const httpServer = http.createServer(app);
+httpServer.listen(80, () => {
+    console.log('HTTP Server running on port 80');
+});
