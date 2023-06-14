@@ -44,6 +44,7 @@ app.post('/analyze_sentiment', async (req, res) => {
     console.log("client sent" + req.body.expression)
     console.log("OPENAI apiKey:"+ process.env.OPENAI_API_KEY);
     try {
+        console.log("Inside try");
         // Get sentiment score
         let gptResponse = await openai.createCompletion({
             model: 'text-davinci-003',
@@ -51,7 +52,7 @@ app.post('/analyze_sentiment', async (req, res) => {
             temperature: 0.3,
             max_tokens: 60
         });
-
+        console.log(sentimentScore);
         sentimentScore = gptResponse.data.choices[0].text.trim();
 
         // Get flower response
@@ -61,6 +62,7 @@ app.post('/analyze_sentiment', async (req, res) => {
             temperature: 0.3,
             max_tokens: 60
         });
+        console.log(flowerResponse);
 
         flowerResponse = gptResponse.data.choices[0].text.trim();
 
